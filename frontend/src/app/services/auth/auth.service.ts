@@ -27,6 +27,12 @@ export class AuthService {
     return this.http.post('http://localhost:3000/users/register',user,{headers:headers})
     .pipe(map(res=>res))
   }
+  image(user){
+    let headers= new HttpHeaders();
+    headers.append('Content-type','application/json');
+    return this.http.post('http://localhost:3000/users/image',user,{headers:headers})
+    .pipe(map(res=>res))
+  }
 
   authenticateUser(user){
     let headers= new HttpHeaders();

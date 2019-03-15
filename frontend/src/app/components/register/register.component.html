@@ -1,5 +1,5 @@
 <h2 class="page-header">Register</h2>
-<form (submit)="OnRegisterSubmit()">
+<form >
 
   <div class="form-group">
     <label for="name">Name</label>
@@ -19,5 +19,22 @@
     <input type="password" [(ngModel)]="password" name="password" class="form-control">
   </div>
 
-  <input type="submit" class="btn btn-primary" value="submit">
+  <div class="form-group">
+    <label for="image">Image</label><br>
+    <!-- <input id="photo" type="file"/> -->
+<!-- button to trigger the file upload when submitted -->
+<!-- <button type="button" class="btn btn-success" (click)="upload()">
+Upload 
+</button> -->
+
+<input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+<button type="submit" class="btn btn-success btn-s" 
+  (click)="uploader.uploadAll()" 
+   >
+     Submit
+</button>
+  </div>
+
+  <!-- <input type="submit" class="btn btn-primary" value="submit"> -->
 </form>

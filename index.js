@@ -24,18 +24,24 @@ const users= require('./routes/users');
 //cors mddleware
 app.use(cors());
 
-//set static folder
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-
+app.use(function (req, res, next) {
+res.setHeader('Access-Control-Allow-Origin', '*');
+res.setHeader('Access-Control-Allow-Methods', 'POST');
+res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+res.setHeader('Access-Control-Allow-Credentials', true);
+next();
+});
 
 //body parser middleware
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 //Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+app.use("/uploads",express.static(path.join(__dirname, '/uploads')));
+
+// app.use("/uploads",express.static(path.join(__dirname,"public/uploads")))
 
 require('./config/passport')(passport);
 

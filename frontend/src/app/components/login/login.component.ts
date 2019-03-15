@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
           this.auth.storeUserData(data.token, data.user);
           this.flashMessage.show('You are logged in',{
             cssClass: "alert-success",
-            timeout:5000
+            timeout:1000
           });
           this.router.navigate(['dashboard'])
         }
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       else{
         this.flashMessage.show(data.msg,{
           cssClass: 'alert-danger',
-          timeout:5000
+          timeout:1000
         });
         this.router.navigate(['login'])
       }

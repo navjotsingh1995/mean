@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 import {HttpClientModule} from '@angular/common/http';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

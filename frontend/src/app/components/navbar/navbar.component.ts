@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private auth:AuthService, private router:Router, private flashMessage:FlashMessagesService) { }
+  constructor(public auth:AuthService, private router:Router, private flashMessage:FlashMessagesService) { }
 
   ngOnInit() {
   }
